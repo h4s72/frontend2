@@ -6,7 +6,7 @@
 
 <template>
   <v-layout align-center justify-start column fill-height>
-    <h1>Välkommen till envirorer</h1>
-    <p>Ditt hjälpmedel för att hålla koll på din resa mot ett miljövänligare liv.</p>
+    <h1>Welcome to envirorer</h1>
+    <p>Your utility for living a more sustainable life.</p>
   </v-layout>
 </template>

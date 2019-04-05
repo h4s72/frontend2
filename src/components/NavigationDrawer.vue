@@ -14,6 +14,21 @@ export default {
           path: '/',
           title: 'Hem', 
           icon: 'home'
+        },
+        {
+          path: '/journal',
+          title: 'Journal',
+          icon: 'assignment'
+        },
+        {
+          path: '/challenges',
+          title: 'Weekly Challenges',
+          icon: 'check_circle'
+        },
+        {
+          path: '/stats',
+          title: 'Statistics',
+          icon: 'bar_chart'
         }
       ]
     }
