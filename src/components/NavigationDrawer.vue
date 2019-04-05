@@ -12,7 +12,7 @@ export default {
       items: [
         { 
           path: '/',
-          title: 'Hem', 
+          title: 'Home', 
           icon: 'home'
         },
         {
@@ -21,14 +21,14 @@ export default {
           icon: 'assignment'
         },
         {
-          path: '/challenges',
-          title: 'Weekly Challenges',
-          icon: 'check_circle'
-        },
-        {
           path: '/stats',
           title: 'Statistics',
           icon: 'bar_chart'
+        },
+        {
+          path: '/challenges',
+          title: 'Weekly Challenges',
+          icon: 'check_circle'
         }
       ]
     }
@@ -44,6 +44,19 @@ export default {
 
 <template>
   <v-navigation-drawer app clipped v-model="drawer" :mobile-break-point="1000">
+    <v-toolbar flat class="transparent">
+      <v-list class="pa-0">
+        <v-list-tile avatar>
+          <v-list-tile-avatar>
+            <img src="/ProEnvirer.svg">
+          </v-list-tile-avatar>
+
+          <v-list-tile-content>
+            <v-list-tile-title>Greta</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+      </v-list>
+    </v-toolbar>
     <v-list dense>
       <v-list-tile
         v-for="item in items"

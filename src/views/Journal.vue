@@ -2,14 +2,26 @@
   export default {
     data() {
       return {
-        water_usage: 0,
-        co2emission: 0
+        emission_by_transport: this.$store.state.emission_by_transport,
+        emission_by_energy: this.$store.state.emission_by_energy,
+        recycledPercentage: this.$store.state.recycledPercentage,
+        snackbar: {
+          show: false,
+          type: 'success',
+          message: 'Saved!'
+        }
       }
     },
 
+
     methods: {
       sendData() {
-        console.log('Running SENDDATA');
+        this.$store.commit('updateAll', {
+          emission_by_transport: this.emission_by_transport,
+          emission_by_energy: this.emission_by_energy,
+          recycledPercentage: this.recycledPercentage
+        })
+        this.snackbar.show = true;
       }
     }
   }
@@ -23,16 +35,22 @@
       ref="form"
     >
       <v-text-field
-        v-model.number="water_usage"
-        label="Water Usage"
+        v-model.number="emission_by_transport"
+        label="CO2 Emission by Transport (kg / week)"
         required
       ></v-text-field>
 
       <v-text-field
-        v-model="co2emission"
-        label="Daily CO2 emission"
+        v-model.number="emission_by_energy"
+        label="CO2 Emission by Energy Consumption (kg / week)"
         required
       ></v-text-field>
+
+      <v-text-field
+        v-model.number="recycledPercentage"
+        label="Recycling (Percentage of possible recyclable material/week recycled)"
+        required
+      ></v-text-field>  
 
       <v-btn
         color="success"
@@ -40,6 +58,17 @@
       >
         Update
       </v-btn>
+      <v-snackbar
+        v-model="snackbar.show"
+        :top="true"
+        :color="snackbar.type"
+        :timeout="2500"
+      >
+        {{ snackbar.message }}
+        <v-btn @click="snackbar.show = false" flat>
+          Stäng
+        </v-btn>
+      </v-snackbar>
     </v-form>
   </v-layout>
 </template>

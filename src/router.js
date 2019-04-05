@@ -20,14 +20,14 @@ export default new Router({
       component: Journal
     },
     {
-      path: '/challenges',
-      name: 'challenges',
-      component: Challenges
-    },
-    {
       path: '/stats',
       name: 'stats',
       component: Stats
+    },
+    {
+      path: '/challenges',
+      name: 'challenges',
+      component: Challenges
     }
   ]
 })

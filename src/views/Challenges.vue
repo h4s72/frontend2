@@ -10,7 +10,7 @@
 
 <template>
   <v-layout align-center justify-start column>
-    <h1>Challenges</h1>
+    <h1>Weekly Challenges</h1>
     <p>Here you can find your weekly challenges, make sure to mark as done when finished.</p>
     <v-form>
       <v-checkbox

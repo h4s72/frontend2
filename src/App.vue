@@ -7,11 +7,11 @@
         @click="toggleSideBar"
       >
       </v-toolbar-side-icon>
-      <v-toolbar-title>Envirorer</v-toolbar-title>
-      <v-spacer></v-spacer>
+      <v-toolbar-title>Enviro</v-toolbar-title>
+<!--       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
         <v-btn flat>Glenn Hysén</v-btn>
-      </v-toolbar-items>
+      </v-toolbar-items> -->
     </v-toolbar>
     <v-content>
       <v-container fluid fill-height>
