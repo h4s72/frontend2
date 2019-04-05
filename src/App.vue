@@ -1,37 +1,48 @@
 <template>
   <v-app>
-    <v-toolbar app>
-      <v-toolbar-title class="headline text-uppercase">
-        <span>Vuetify</span>
-        <span class="font-weight-light">MATERIAL DESIGN</span>
-      </v-toolbar-title>
-      <v-spacer></v-spacer>
-      <v-btn
-        flat
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
+    <NavigationDrawer :show="showSideBar"/>
+    <!-- <Toolbar/> -->
+    <v-toolbar app fixed clipped-left>
+      <v-toolbar-side-icon
+        @click="toggleSideBar"
       >
-        <span class="mr-2">Latest Release</span>
-      </v-btn>
+      </v-toolbar-side-icon>
+      <v-toolbar-title>Envirorer</v-toolbar-title>
     </v-toolbar>
-
     <v-content>
-      <HelloWorld/>
+      <v-container fluid fill-height>
+        <router-view></router-view>
+      </v-container>
     </v-content>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
+
+import NavigationDrawer from './components/NavigationDrawer';
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  },
-  data () {
+
+  data() {
     return {
-      //
+      showSideBar: true
+    }
+  },
+
+  computed: {
+    appLoaded() {
+      return this.$store.username.length > 0;
+    }
+  },
+
+  components: {
+    NavigationDrawer
+  },
+
+  methods: {
+    toggleSideBar() {
+      this.showSideBar = !this.showSideBar;
     }
   }
 }
